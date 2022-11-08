@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<kendo-gridlayout [rows]="[100]" [cols]="[90, 1050, 90]" [gap]="5">
+  <kendo-gridlayout-item [col]="1" [row]="1" class="box"></kendo-gridlayout-item>
+  <kendo-gridlayout-item [col]="2" [row]="1" class="box">
+    <router-outlet></router-outlet>
+  </kendo-gridlayout-item>
+  <kendo-gridlayout-item [col]="3" [row]="1" class="box"></kendo-gridlayout-item>
+</kendo-gridlayout>
+

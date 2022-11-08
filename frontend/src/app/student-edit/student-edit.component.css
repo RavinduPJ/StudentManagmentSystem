@@ -1,0 +1,20 @@
+.outerdiv{
+    margin:50px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.k-form {
+    width: 240px;
+
+}
+
+.k-form-buttons{
+    justify-content: right;
+}

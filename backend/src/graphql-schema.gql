@@ -1,0 +1,51 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Student {
+  id: Float!
+  first_name: String!
+  last_name: String!
+  date_of_birth: String
+  email: String!
+  age: Int!
+}
+
+type StudentCount {
+  total: Float!
+  data: [Student!]!
+}
+
+type Query {
+  allstudents(options: Options!): StudentCount!
+  student(id: Int!): Student!
+}
+
+input Options {
+  take: Int!
+  skip: Int!
+  searchkey: String!
+}
+
+type Mutation {
+  createStudent(createStudentInput: CreateStudentInput!): Student!
+  updateStudent(updateStudentInput: UpdateStudentInput!): Student!
+  removeStudent(id: Int!): Student!
+}
+
+input CreateStudentInput {
+  first_name: String!
+  last_name: String!
+  date_of_birth: String
+  email: String!
+  age: Int!
+}
+
+input UpdateStudentInput {
+  first_name: String!
+  last_name: String!
+  date_of_birth: String
+  email: String!
+  age: Int!
+  id: Int!
+}

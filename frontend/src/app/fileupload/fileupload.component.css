@@ -1,0 +1,12 @@
+.wrapper{
+    margin-top: 200px;
+    display: flexbox;
+    text-align: center;
+    align-items: center;
+}
+
+p{
+    font-size: smaller;
+    font-weight: 500;
+    color: #07b584;
+}   

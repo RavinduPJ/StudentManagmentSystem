@@ -1,0 +1,9 @@
+.outerdiv{
+  height: calc(100vh);
+  display: flex;
+  justify-content:center;
+  margin:auto
+}
+.panelbar-wrapper {
+   margin: auto;
+}

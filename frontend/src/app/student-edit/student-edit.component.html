@@ -1,0 +1,41 @@
+<div class="outerdiv">
+    <form class="k-form" [formGroup]="form">
+        <fieldset class="k-form-fieldset">
+            <kendo-formfield>
+                <kendo-label [for]="id" text="User ID"></kendo-label>
+                <kendo-textbox formControlName="id" [clearButton]="true" #id required></kendo-textbox>
+                <kendo-formerror>Error: User ID is required</kendo-formerror>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-label [for]="firstname" text="First Name"></kendo-label>
+                <kendo-textbox formControlName="firstname" [clearButton]="true" #firstname required></kendo-textbox>
+                <kendo-formerror>Error: First name is required</kendo-formerror>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-label [for]="lastname" text="Last Name"></kendo-label>
+                <kendo-textbox formControlName="lastname" [clearButton]="true" #lastname required></kendo-textbox>
+                <kendo-formerror>Error: Last Name is required</kendo-formerror>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-label [for]="dateofbirth" text="Date of Birth"></kendo-label>
+                <kendo-textbox formControlName="dateofbirth" [clearButton]="true" #dateofbirth required></kendo-textbox>
+                <kendo-formerror>Error: Last Name is required</kendo-formerror>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-datepicker formControlName="dateofbirth" calendarType="infinite" #dateofbirth></kendo-datepicker>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-label [for]="age" text="Age"></kendo-label>
+                <kendo-textbox formControlName="age" [clearButton]="true" #age required></kendo-textbox>
+                <kendo-formerror>Error: Current Age is required</kendo-formerror>
+            </kendo-formfield>
+            <div class="k-form-buttons">
+                <button kendoButton themeColor="primary">
+                    Update
+                </button>
+                <button kendoButton>Reset</button>
+            </div>
+        </fieldset>
+
+    </form>
+</div>

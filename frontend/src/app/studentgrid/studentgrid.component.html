@@ -1,0 +1,63 @@
+
+<div class="wrapper">
+<kendo-grid 
+      [data]="view | async"
+      [pageSize]="state.take"
+      [skip]="state.skip"
+      [pageable]="true"
+      (pageChange)="pageChange($event)"
+      strictNullInputTypes="false"
+      [resizable]="true"
+      [height]="520"
+      (edit)="editHandler($event)"
+      (remove)="removeHandler($event)"
+      (save)="saveHandler($event)"
+      (add)="addHandler($event)"
+      (cancel)="cancelHandler($event)"
+      [navigable]="true"
+      [sortable]="true"
+      >
+  
+    <ng-template kendoGridToolbarTemplate>
+      <h5>Student Details Table</h5>
+        <!-- <input [style.width.px]="165" placeholder="Search in all columns..." kendoTextBox (input)="onFilter($event)" /> -->
+        <kendo-grid-spacer></kendo-grid-spacer>
+        <button kendoGridPDFCommand style="background-color: red ; color: white;">Export to PDF</button>
+        <button kendoGridExcelCommand type="button" style="background-color: green ; color: white;">
+            Export to Excel
+        </button>
+    </ng-template>
+    <kendo-grid-command-column title="Operation" [width]="80">
+      <ng-template kendoGridCellTemplate let-isNew="isNew">
+        <button kendoGridEditCommand [primary]="true">Edit</button>
+        <button kendoGridRemoveCommand>Delete</button>
+          <button kendoGridSaveCommand [disabled]="formGroup?.invalid">
+            {{ isNew ? "Insert" : "Update" }}
+          </button>
+          <button kendoGridCancelCommand>
+            {{ isNew ? "Discard changes" : "Cancel" }}
+          </button>
+      </ng-template>
+
+  </kendo-grid-command-column>
+    <kendo-grid-column field="id" title="ID" [width]="150" [hidden]=true>
+    </kendo-grid-column>
+    <kendo-grid-column field="first_name" title="First Name" [width]="50">
+    </kendo-grid-column>
+    <kendo-grid-column field="last_name" title="Last Name" [width]="50">
+    </kendo-grid-column>
+    <kendo-grid-column field="email" title="Email" [width]="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="date_of_birth" title="Date Of Birth" [width]="50">
+    </kendo-grid-column>
+    <kendo-grid-column field="age" title="Current Age" [width]="50">
+    </kendo-grid-column>
+
+    <kendo-grid-pdf
+    fileName="Student Details.pdf"
+    [repeatHeaders]="true"
+  ></kendo-grid-pdf>
+  <kendo-grid-excel fileName="Student Details.xlsx"></kendo-grid-excel>
+</kendo-grid>
+
+</div>
